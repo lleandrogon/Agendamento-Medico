@@ -1,0 +1,91 @@
+.main-container {
+    background-color: var(--app-light-background);
+}
+
+.row {
+    margin: 0;
+    height: 100vh;
+}
+
+.image-container {
+    background: url('https://media.kasperskydaily.com/wp-content/uploads/sites/94/2021/11/25120205/214_smart-hospitals-scaled-1-1200x900.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.image-container img {
+    width: 50%;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container form {
+    padding: 20px;
+    width: 80%;
+}
+
+.title {
+    font-size: 1.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form-control {
+    background-color: var(--app-mid-background);
+}
+
+.form-control:focus {
+    background-color: var(--app-mid-background);
+}
+
+.forgot-password {
+    margin-left: 5px;
+}
+
+.forgot-password a {
+    color: var(--app-link);
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+    color: var(--app-patient);
+}
+
+.button-container {
+    display: flex;
+    justify-content: end;
+    margin-top: 30px;
+}
+
+.register-button, .button {
+    background-color: var(--app-patient);
+    color: var(--app-light);
+    margin: 0 7px;
+}
+
+.register-button {
+    text-decoration: none;
+    background-color: var(--app-mid-background);
+    color: var(--app-dark);
+}
+
+.register-button:hover {
+    background-color: var(--app-light); 
+    color: var(--app-dark) !important; 
+    box-shadow: 0 4px 8px var(--app-dark) !important;
+}
+
+.button:hover {
+    background-color: var(--app-light);
+    color: var(--app-patient);
+    box-shadow: 0 4px 8px var(--app-patient);
+}

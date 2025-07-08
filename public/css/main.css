@@ -1,0 +1,11 @@
+@import './base.css';
+
+:root {
+    --app-doctor: #28a745;
+    --app-patient: #1E90FF;
+    --app-mid-background: #e9e9e9;
+    --app-light-background: #f3f3f3;
+    --app-link: #0A58CA;
+    --app-light: #ffffff;
+    --app-dark: #000000;
+}

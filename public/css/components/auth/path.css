@@ -1,0 +1,60 @@
+.path-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--app-light-background);
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+    color: var(--app-dark);
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 8px black;
+    border-radius: 25px 25px;
+    padding: 25px;
+    transition: transform 0.3s ease;
+}
+
+.card-container:hover {
+    transform: scale(1.1);
+}
+
+.card-title {
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.card-container i {
+    font-size: 55px;
+}
+
+.fa-user {
+    color: var(--app-patient);
+}
+
+.fa-user-doctor {
+    color: var(--app-doctor);
+}
+
+@media (min-width: 768px) {
+    .card-container {
+        padding: 25px 100px;
+        margin: 0 15px;
+    }
+
+    .card-container i {
+        font-size: 100px;
+    }
+}

@@ -1,0 +1,32 @@
+.label {
+    font-weight: 500;
+    font-size: 1.1em;
+    margin: 0 0 5px 2px;
+}
+
+.form-control {
+    font-size: 17px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.form-control:focus {
+    border: none;
+    background-color: transparent;
+    box-shadow: 0 2px 8px var(--app-patient);
+}
+
+.button {
+    font-size: 1.2em;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 4px 10px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
