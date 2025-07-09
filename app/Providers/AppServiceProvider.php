@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Interfaces\PatientInterface;
-use App\Repositories\PatientRepository;
+use App\Interfaces\PatientAuthInterface;
+use App\Repositories\PatientAuthRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(PatientInterface::class, PatientRepository::class);
+        $this->app->bind(PatientAuthInterface::class, PatientAuthRepository::class);
     }
 
     /**

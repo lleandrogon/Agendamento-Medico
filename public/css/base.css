@@ -17,6 +17,23 @@
     box-shadow: 0 2px 8px var(--app-patient);
 }
 
+.success {
+    background-color: var(--app-success);
+    padding: 15px;
+    border: 1px solid var(--app-dark-success);
+    color: var(--app-dark-success);
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.error {
+    color: var(--app-error);
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10px;
+}
+
 .button {
     font-size: 1.2em;
     font-weight: 500;
