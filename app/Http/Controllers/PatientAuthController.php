@@ -37,6 +37,12 @@ class PatientAuthController extends Controller
             return redirect()->back()->with('error', 'Email e/ou senha incorretos!');  
         }
 
-        return redirect()->route('patient.index');
+        return redirect()->route('patient.show', Auth::user());
+    }
+
+    public function patientLogout() {
+        $this->patientAuthService->patientLogout();
+
+        return redirect()->route('patient.auth');
     }
 }

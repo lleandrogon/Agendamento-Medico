@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Models;
-
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 
-class Employee extends Model
+class Employee extends Authenticatable
 {
     protected $table = 'employees';
     
@@ -12,6 +12,10 @@ class Employee extends Model
         'registration',
         'name',
         'email',
-        'passsword'
+        'password'
     ];
+
+    public function specialty() {
+        return $this->belongsTo(Specialty::class);
+    }
 }

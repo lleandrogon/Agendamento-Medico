@@ -33,4 +33,8 @@ class PatientAuthService
     public function patientLogin($request) {
         return Auth::attempt($request);
     }
+
+    public function patientLogout() {
+        return Auth::logout();
+    }
 }

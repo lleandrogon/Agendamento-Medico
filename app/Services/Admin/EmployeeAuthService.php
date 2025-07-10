@@ -15,6 +15,6 @@ class EmployeeAuthService
     }
 
     public function employeeLogin($request) {
-        Auth::guard('employee')->attempt($request);
+        return Auth::guard('employee')->attempt($request);
     }
 }

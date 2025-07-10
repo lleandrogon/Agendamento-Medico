@@ -1,22 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Services\PatientService;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class PatientController extends Controller
+class EmployeeController extends Controller
 {
-    public $patientService;
-
-    public function __construct(PatientService $patientService)
-    {
-        $this->patientService = $patientService;
-    }
-
     public function index()
     {
-        return view('patients.index');
+        return view('admin.index');
     }
 
     /**
@@ -32,7 +25,7 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**
@@ -40,9 +33,7 @@ class PatientController extends Controller
      */
     public function show(string $id)
     {
-        $appointments = $this->patientService->getUserAppointments();
-
-        return view('patients.show', compact('appointments'));
+        //
     }
 
     /**

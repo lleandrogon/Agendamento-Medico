@@ -11,7 +11,7 @@
                 {{-- Div para implementação de background --}}
             </div>
             <div class="login-container col-12 col-lg-6">
-                <form action="" method="POST">
+                <form action="{{ route('employee.login') }}" method="POST">
                     @csrf
                     @if (session('success'))
                         <div class="success">{{ session('success') }}</div>
@@ -20,7 +20,7 @@
                     <div class="mb-3">
                         <label for="registration" class="label">Matrícula</label>
                         <input type="text" name="registration" id="registration" class="form-control" placeholder="Digite sua matrícula">
-                        @error('email')
+                        @error('registration')
                             <p class="error">{{ $message }}</p>
                         @enderror
                     </div>
