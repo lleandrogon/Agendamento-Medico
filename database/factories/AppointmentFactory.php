@@ -18,7 +18,7 @@ class AppointmentFactory extends Factory
     {
         return [
             'user_id' => rand(1, 4),
-            'employee_id' => rand(1, 2),
+            'employee_id' => rand(1, 105),
             'date' => fake()->date(),
             'time' => fake()->time(),
             'status' => 'agendada'

@@ -1,25 +1,27 @@
 .label {
     font-weight: 500;
     font-size: 1.1em;
-    margin: 0 0 5px 2px;
+    margin: 0 0 5px 3px;
 }
 
 .form-control {
     font-size: 17px;
-    padding: 5px 10px;
+    padding: 7px 10px;
     background-color: transparent;
     border-radius: 10px;
+    box-shadow: 0 1px 2px var(--app-dark);
 }
 
 .form-control:focus {
     border: none;
     background-color: transparent;
-    box-shadow: 0 2px 8px var(--app-patient);
+    box-shadow: 0 2px 8px var(--app-dark);
 }
 
 .success {
     background-color: var(--app-success);
     padding: 15px;
+    margin: 20px;
     border: 1px solid var(--app-dark-success);
     color: var(--app-dark-success);
     font-weight: 500;

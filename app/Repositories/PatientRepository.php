@@ -9,8 +9,11 @@ use Illuminate\Support\Facades\DB;
 class PatientRepository implements PatientInterface
 {
     public function getUserAppointments() {
-        $authId = Auth::id();
-
-        return DB::select("SELECT * FROM appointments INNER JOIN employees INNER JOIN specialities WHERE user_id = $authId ORDER BY date");
+        return DB::table('appointments')
+            ->join('employees', 'appointments.employee_id', '=', 'employees.id')
+            ->join('specialities', 'employees.specialty_id', '=', 'specialities.id')
+            ->where('appointments.user_id', Auth::id())
+            ->orderByDesc('appointments.date')
+            ->paginate(10);
     }
 }

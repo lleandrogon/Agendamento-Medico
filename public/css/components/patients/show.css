@@ -1,9 +1,9 @@
 .header {
-    padding: 10px 5px;
+    padding: 10px 0;
 }
 
 .row {
-    margin: 0 0 40px 0;
+    margin: 0 0 20px 0;
     padding: 20px 0;
     box-shadow: 0 1px 4px var(--app-dark);
 }
@@ -14,6 +14,7 @@ span {
 
 .name {
     font-weight: bold;
+    color: var(--app-patient);
 }
 
 ul li {
@@ -28,11 +29,97 @@ ul li:hover {
     cursor: pointer;
 }
 
+ul li a {
+    text-decoration: none;
+    color: var(--app-dark);
+}
+
+ul li a:hover {
+    color: var(--app-patient);
+}
+
+.fa-bars {
+    font-size: 3em;
+    color: var(--app-patient);
+    transition: transform 0.3s ease;
+    margin-right: 10px;
+}
+
+.fa-bars:hover {
+    color: var(--app-light-patient);
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+
+.nav-responsive ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+.nav-responsive ul li {
+    margin: 10px 0;
+}
+
 .table-title {
     text-align: center;
-    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 35px 0;
+}
+
+.table {
+    width: 100%;
+    margin: 0 auto 40px;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .table thead th {
-    background-color: var(--app-light-patient);
+    background-color: #cfe2ff;
+    color: var(--app-dark-patient);
+    font-size: 0.9em;
+    font-weight: 600;
+    padding: 12px;
+    border-bottom: 1px solid #dee2e6;
+    text-align: center;
+}
+
+.table tbody td {
+    padding: 12px;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--app-light-background);
+    font-size: 0.90em;
+}
+
+.status {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.fa-trash {
+    color: var(--app-error);
+    font-size: 1.3em;
+}
+
+.fa-trash:hover {
+    color: var(--app-danger);
+}
+
+@media (min-width: 768px) {
+    .table thead th {
+        font-size: 1em;
+    }
+
+    .table tbody td {
+        font-size: 0.95em;
+    }
 }

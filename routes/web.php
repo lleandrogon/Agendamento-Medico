@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\EmployeeAuthController;
 use App\Http\Controllers\Admin\EmployeeController;
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\PatientAuthController;
 use App\Http\Controllers\PatientController;
 use Illuminate\Support\Facades\Route;
@@ -10,7 +11,7 @@ Route::get('/', function () {
     return view('auth.path');
 });
 
-Route::resource('/patient', PatientController::class)->parameters(['' => 'paciente']);
+Route::resource('patient', PatientController::class)->parameters(['' => 'paciente']);
 
 Route::prefix('paciente')->group(function() {
     Route::get('login', [PatientAuthController::class, 'patientAuth'])->name('patient.auth');
@@ -24,7 +25,9 @@ Route::resource('/employee', EmployeeController::class)->parameters(['' => 'func
 
 Route::prefix('funcionario')->group(function() {
     Route::get('login', [EmployeeAuthController::class, 'employeeAuth'])->name('employee.auth');
-    Route::get('/registrar', [EmployeeAuthController::class, 'employeeRegister'])->name('employee.register');
+    Route::get('registrar', [EmployeeAuthController::class, 'employeeRegister'])->name('employee.register');
 
     Route::post('login', [EmployeeAuthController::class, 'employeeLogin'])->name('employee.login');
 });
+
+Route::resource('appointment', AppointmentController::class);

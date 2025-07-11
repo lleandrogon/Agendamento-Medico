@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Appointment;
+use App\Models\Employee;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -16,6 +17,7 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(EmployeeSeeder::class);
         // $this->call(SpecialitiesSeeder::class);
-        // Appointment::factory(200)->create();
+        Appointment::factory(100)->create();
+        // Employee::factory(100)->create();
     }
 }
