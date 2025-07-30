@@ -7,6 +7,22 @@ main {
     width: 100%;
 }
 
+.fa-arrow-left {
+    font-size: 1.5em;
+    background-color: var(--app-patient);
+    color: var(--app-light);
+    margin-bottom: 40px;
+    padding: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.fa-arrow-left:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px var(--app-patient);
+    background-color: var(--app-light-patient);
+}
+
 h1 {
     font-size: 2.2em;
     text-transform: uppercase;
@@ -17,7 +33,7 @@ form {
     border-radius: 25px;
     box-shadow: 0 2px 8px var(--app-dark);
     padding: 50px 30px;
-    width: 60%;
+    width: 80%;
 }
 
 .button-container {
@@ -36,4 +52,10 @@ form {
     box-shadow: 0 2px 8px var(--app-dark-patient);
     background-color: var(--app-light-patient);
     transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+    form {
+        width: 60%;
+    }
 }

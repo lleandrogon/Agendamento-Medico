@@ -18,10 +18,20 @@ class AppointmentService
         return $this->appointmentInterface->getSpecialities();
     }
 
+    public function getAppointmentById($id) {
+        return $this->appointmentInterface->getAppointmentById($id);
+    }
+
     public function storeAppointment($request) {
         $appointment = $this->mapAppointmentFormData($request);
 
         return $this->appointmentInterface->storeAppointment($appointment);
+    }
+
+    public function updateAppointment($request, $id) {
+        $appointment = $this->mapAppointmentFormData($request);
+
+        return $this->appointmentInterface->updateAppointment($appointment, $id);
     }
 
     protected function mapAppointmentFormData($request) {
@@ -40,5 +50,9 @@ class AppointmentService
             'time' => $request->time,
             'status' => 'agendada'
         ];
+    }
+
+    public function destroyAppointment($id) {
+        return $this->appointmentInterface->destroyAppointment($id);
     }
 }

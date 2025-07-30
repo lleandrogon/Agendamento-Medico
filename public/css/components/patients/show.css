@@ -105,6 +105,15 @@ ul li a:hover {
     font-weight: bold;
 }
 
+.fa-calendar-days {
+    color: var(--app-doctor);
+    font-size: 1.4em;
+}
+
+.fa-calendar-days:hover {
+    color: var(--app-success);
+}
+
 .fa-trash {
     color: var(--app-error);
     font-size: 1.3em;
@@ -112,6 +121,11 @@ ul li a:hover {
 
 .fa-trash:hover {
     color: var(--app-danger);
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
 }
 
 @media (min-width: 768px) {

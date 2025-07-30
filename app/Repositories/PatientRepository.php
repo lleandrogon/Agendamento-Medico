@@ -14,6 +14,14 @@ class PatientRepository implements PatientInterface
             ->join('specialities', 'employees.specialty_id', '=', 'specialities.id')
             ->where('appointments.user_id', Auth::id())
             ->orderByDesc('appointments.date')
+            ->select(
+                'appointments.id as id',
+                'appointments.date as date',
+                'appointments.time as time',
+                'appointments.status as status',
+                'employees.name as employee',
+                'specialities.specialty as specialty'
+            )
             ->paginate(10);
     }
 }

@@ -33,7 +33,7 @@
                     </div>
                     <div class="forgot-password mb-3">
                         <div>
-                            <a href="">Esqueceu a senha?</a>
+                            <a href="{{ route('patient.reset.show') }}">Esqueceu a senha?</a>
                         </div>
                     </div>
                     @if (session('error'))

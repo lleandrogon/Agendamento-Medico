@@ -40,6 +40,14 @@ class PatientAuthController extends Controller
         return redirect()->route('patient.show', Auth::user());
     }
 
+    public function sendEmailResetPassword(Request $request) {
+        return $this->patientAuthService->sendEmailResetPassword($request);
+    }
+
+    public function showResetPassword() {
+        return view('auth.patient-reset');
+    }
+
     public function patientLogout() {
         $this->patientAuthService->patientLogout();
 

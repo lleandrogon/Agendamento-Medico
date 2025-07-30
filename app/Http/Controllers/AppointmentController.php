@@ -28,9 +28,10 @@ class AppointmentController extends Controller
      */
     public function create()
     {
+        $user_id = Auth::id();
         $specialities = $this->appointmentService->getSpecialities();
 
-        return view('patients.create-appointment', compact('specialities'));
+        return view('patients.create-appointment', compact('user_id', 'specialities'));
     }
 
     /**
@@ -62,15 +63,23 @@ class AppointmentController extends Controller
      */
     public function edit(string $id)
     {
+        $user_id = Auth::id();
+        $appointment = $this->appointmentService->getAppointmentById($id);
+        $specialities = $this->appointmentService->getSpecialities();
 
+        return view('patients.edit-appointment', compact('user_id', 'appointment', 'specialities'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(AppointmentRequest $request, string $id)
     {
-        //
+        $this->appointmentService->updateAppointment($request, $id);
+
+        $user_id = Auth::id();
+
+        return redirect()->route('patient.show', $user_id)->with('success', 'Data alterada com sucesso!');
     }
 
     /**
@@ -78,6 +87,10 @@ class AppointmentController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->appointmentService->destroyAppointment($id);
+
+        $user_id = Auth::id();
+
+        return redirect()->route('patient.show', $user_id);
     }
 }
