@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PatientLoginRequest;
 use App\Http\Requests\PatientRequest;
+use App\Http\Requests\PatientResetRequest;
 use App\Services\PatientAuthService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -41,16 +42,34 @@ class PatientAuthController extends Controller
     }
 
     public function sendEmailResetPassword(Request $request) {
-        return $this->patientAuthService->sendEmailResetPassword($request);
+        $this->patientAuthService->sendEmailResetPassword($request);
+
+        return redirect()->back()->with('success', 'Verifique seu email para redefinição de senha!');
     }
 
     public function showResetPassword() {
         return view('auth.patient-reset');
     }
 
+    public function formResetPassword(Request $request) {
+        $token = $request->query('token');
+
+        return view('auth.patient-reset-form', compact('token'));
+    }
+
+    public function updatePassword(PatientResetRequest $request) {
+        $result = $this->patientAuthService->updatePassword($request);
+
+        if (!$result) {
+            return redirect()->route('patient.login')->with('reset-error', 'Erro ao resetar a senha!');
+        }
+
+        return redirect()->route('patient.login')->with('reset', 'Senha resetada com sucesso!');
+    }
+
     public function patientLogout() {
         $this->patientAuthService->patientLogout();
-
+        
         return redirect()->route('patient.auth');
     }
 }

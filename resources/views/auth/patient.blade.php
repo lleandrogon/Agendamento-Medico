@@ -13,9 +13,15 @@
             <div class="login-container col-12 col-lg-6">
                 <form action="{{ route('patient.login') }}" method="POST">
                     @csrf
-                    @if (session('success'))
+
+                    @if(session('success'))
                         <div class="success">{{ session('success') }}</div>
                     @endif
+
+                    @if(session('reset'))
+                        <div class="success">{{ session('reset') }}</div>
+                    @endif
+
                     <h2 class="title">Login</h2>
                     <div class="mb-3">
                         <label for="email" class="label">Email</label>
@@ -36,9 +42,15 @@
                             <a href="{{ route('patient.reset.show') }}">Esqueceu a senha?</a>
                         </div>
                     </div>
+
                     @if (session('error'))
                         <p class="error">{{ session('error') }}</p>
                     @endif
+
+                    @if(session('reset-error'))
+                        <div class="error">{{ session('reset-error') }}</div>
+                    @endif
+                    
                     <div class="button-container">
                         <a href="{{ route('patient.register') }}" class="register-button button">Registrar</a>
                         <button type="submit" class="button">Entrar</button>

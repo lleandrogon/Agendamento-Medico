@@ -6,6 +6,9 @@
 
 @section('content')
     <div class="reset-container">
+        @if(session('success'))
+            <div class="success">{{ session('success') }}</div>
+        @endif
         <form action="{{ route('patient.email') }}" method="POST">
             @csrf
             <label for="email" class="label">Email:</label>

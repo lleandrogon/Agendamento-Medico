@@ -18,7 +18,9 @@ Route::prefix('paciente')->group(function() {
     Route::get('login', [PatientAuthController::class, 'patientAuth'])->name('patient.auth');
     Route::get('registrar', [PatientAuthController::class, 'patientRegister'])->name('patient.register');
     Route::get('resetar-senha', [PatientAuthController::class, 'showResetPassword'])->name('patient.reset.show');
+    Route::get('redefinir-senha', [PatientAuthController::class, 'formResetPassword'])->name('patient.reset.form');
     Route::post('paciente-email', [PatientAuthController::class, 'sendEmailResetPassword'])->name('patient.email');
+    Route::put('alterar-senha', [PatientAuthController::class, 'updatePassword'])->name('patient.password.update');
     Route::post('registrar', [PatientAuthController::class, 'storePatient'])->name('patient.post');
     Route::post('login', [PatientAuthController::class, 'patientLogin'])->name('patient.login');  
     Route::post('logout', [PatientAuthController::class, 'patientLogout'])->name('patient.logout')->middleware(PatientAuthMiddleware::class);
